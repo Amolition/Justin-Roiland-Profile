@@ -13,419 +13,221 @@
 </head>
 <body>
 <div id="app">
-    <transition name="fade" mode="out-in">
-        <div v-if="mainsec === 'about'" id="about" key="about">
-            <div id="about-image-container" class="bg-image-container">
-                <div class="image-cropper left">
-                    <img id="about-image-left" class="bg-image" src="JR_RandM_style_edit.jpg">
-                </div>
-                <div class="image-cropper right">
-                    <img id="about-image-right" class="bg-image" src="JR_RandM_style_edit.jpg">
-                </div>
+    <transition-group name="fade">
+        <div v-if="mainsec === 'about'" id="about-image-container" class="bg-image-container" key="about-bg">
+            <div class="image-cropper left">
+                <img id="about-image-left" class="bg-image" src="JR_RandM_style_edit.jpg">
             </div>
-            <div id="about-overlay" class="bg-image-overlay"></div>
+            <div class="image-cropper right">
+                <img id="about-image-right" class="bg-image" src="JR_RandM_style_edit.jpg">
+            </div>
+            <div class="bg-image-overlay"></div>
         </div>
-        <div v-else-if="mainsec === 'tv' && subsec === 'rm'" id="rm" key="rm">
-            <div id="rm-image-container" class="bg-image-container">
-                <div class="image-cropper left">
-                    <img id="rm-image-left" class="bg-image" src="RandM_left.jpg">
-                </div>
-                <div class="image-cropper right">
-                    <img id="rm-image-right" class="bg-image" src="RandM_right.jpg">
+        <div v-else-if="mainsec === 'tv' && subsec === 'rm'" id="rm-image-container" class="bg-image-container"
+             key="rm-bg">
+            <div class="image-cropper left">
+                <img id="rm-image-left" class="bg-image" src="RandM_left.jpg">
+            </div>
+            <div class="image-cropper right">
+                <img id="rm-image-right" class="bg-image" src="RandM_right.jpg">
+            </div>
+            <div class="bg-image-overlay"></div>
+        </div>
+        <div v-else-if="mainsec === 'tv' && subsec === 'so'" id="so-image-container" class="bg-image-container"
+             key="so-bg">
+            <div class="image-cropper left">
+                <img id="so-image-left" class="bg-image" src="SO_edit.jpg">
+            </div>
+            <div class="image-cropper right">
+                <img id="so-image-right" class="bg-image" src="SO_edit.jpg">
+            </div>
+            <div class="bg-image-overlay"></div>
+        </div>
+        <div v-else-if="mainsec === 'videogames' && subsec === 'vr'" id="vr-image-container" class="bg-image-container"
+             key="vr-bg">
+            <div class="image-cropper left">
+                <img id="vr-image-left" class="bg-image" src="VR_edit.jpg">
+            </div>
+            <div class="image-cropper right">
+                <img id="vr-image-right" class="bg-image" src="VR_edit.jpg">
+            </div>
+            <div class="bg-image-overlay"></div>
+        </div>
+        <div v-else-if="mainsec === 'videogames' && subsec === 'tstu'" id="tstu-image-container"
+             class="bg-image-container"
+             key="tstu-bg">
+            <div class="image-cropper left">
+                <img id="tstu-image-left" class="bg-image" src="TSTU_left.jpg">
+            </div>
+            <div class="image-cropper right">
+                <img id="tstu-image-right" class="bg-image" src="TSTU_right.jpg">
+            </div>
+            <div class="bg-image-overlay"></div>
+        </div>
+        <div v-if="mainsec === 'about'" id="about" class="content-container" key="about">
+            <div id="about-content" class="content">
+                <div class="spacer2"></div>
+                <div id="about-main" class="main">
+                    <div class="title-container">
+                        <img src="about_title.png">
+                    </div>
+                    <div class="main-row">
+                        <div class="quote-container">
+                            <figure>
+                                <blockquote>
+                                    <p>I'm just insane. So what usually drives me is pure joy for something stupid. I'm
+                                        also very visual. I'll have an idea in my head that I really can't shake.</p>
+                                </blockquote>
+                                <figcaption>— Justin Roiland, <cite>Actor, Artist, Creator</cite></figcaption>
+                            </figure>
+                        </div>
+                        <div class="pic-container">
+                            <img src="about1.png">
+                        </div>
+                    </div>
+                    <div class="main-row">
+                        <div class="text-container">
+                            <p>Mark Justin Roiland (born February 21, 1980) is an American voice actor, animator,
+                                writer, producer, and director. He is best known as the co-creator of Adult Swim's Rick
+                                and Morty and its subsequent franchise, on which he voices the show's title characters
+                                and as the co-creator of Hulu's Solar Opposites, in which he voices the main character,
+                                Korvo. He has also played Earl of Lemongrab on Adventure Time and Blendin Blandin on
+                                Gravity Falls. He founded the animation studio Justin Roiland's Solo Vanity Card
+                                Productions! and the video game studio Squanch Games.</p>
+                        </div>
+                    </div>
+                    <div class="main-row">
+                        <div class="video-container">
+                            <iframe src="https://youtu.be/5fCLJqgViYQ">
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div id="rm-overlay" class="bg-image-overlay">
+        </div>
+        <div v-else-if="mainsec === 'tv' && subsec === 'rm'" id="rm" class="content-container" key="rm">
+            <div id="rm-content" class="content">
                 <div class="spacer2"></div>
                 <div id="rm-main" class="main">
+                    <div class="title-container">
+                        <img src="rm_title.png">
+                    </div>
+                    <div class="main-row">
+                        <div class="video-container">
+                            <iframe src="https://youtu.be/fJ1np6NnMYU">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="main-row">
+                        <div class="quote-container">
+                            <figure>
+                                <blockquote>
+                                    <p>I'll tell you how I feel about school, Jerry: it's a waste of time. Bunch of
+                                        people runnin' around bumpin' into each other, got a guy up front says, '2 + 2,'
+                                        and the people in the back say, '4.' Then the bell rings and they give you a
+                                        carton of milk and a piece of paper that says you can go take a dump or
+                                        somethin'. I mean, it's not a place for smart people, Jerry. I know that's not a
+                                        popular opinion, but that's my two cents on the issue.</p>
+                                </blockquote>
+                                <figcaption>— Rick Sanchez, <cite>Scientist</cite></figcaption>
+                            </figure>
+                        </div>
+                        <div class="text-container">
+                            <p>Rick and Morty is an American adult animated science fiction sitcom created by Justin
+                                Roiland and Dan Harmon for Cartoon Network's nighttime programming block, Adult Swim.
+                                The series follows the misadventures of cynical mad scientist Rick Sanchez and his
+                                good-hearted but fretful grandson Morty Smith, who split their time between domestic
+                                life and interdimensional adventures.
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet quam eleifend, tempus sem
-                    ullamcorper, fermentum elit. Quisque massa urna, tristique eu aliquet id, facilisis ac libero.
-                    Nam nec gravida ligula. Nunc euismod sapien non elit rhoncus dignissim. Nunc ac elit posuere,
-                    interdum odio ut, egestas risus. Fusce est dui, facilisis ut consectetur porttitor, imperdiet in
-                    massa. Duis egestas, tortor in aliquet scelerisque, lorem nunc ultrices nisi, vitae ullamcorper
-                    quam odio sit amet ante. Nulla tincidunt volutpat consectetur. Ut rutrum massa a lacus tincidunt
-                    fermentum.
-
-                    <br><br><br>
-
-                    Nam nisi urna, pellentesque vitae neque nec, suscipit viverra ante. Nam et urna euismod ligula
-                    consectetur luctus ac et tellus. Curabitur vel elit vitae arcu tempus auctor. Sed sed semper
-                    mauris. Aliquam id dolor consequat, pharetra erat a, ultricies arcu. Mauris sit amet congue dui.
-                    Sed ipsum ante, lobortis et felis a, porta tristique neque. Fusce iaculis accumsan odio, at
-                    imperdiet nisl feugiat facilisis. Nullam placerat nec tellus vel gravida. Aenean id faucibus
-                    odio.
-
-                    <br><br><br>
-
-                    Nulla efficitur libero sem, et cursus augue iaculis a. Duis aliquet gravida dictum. Nunc metus
-                    neque, scelerisque non rhoncus viverra, viverra sed eros. Sed volutpat tellus id risus viverra
-                    consequat. Suspendisse et tempor neque, ac sollicitudin lectus. Pellentesque efficitur
-                    ullamcorper nibh. Phasellus ut leo lobortis, condimentum lacus id, dignissim dui. Donec
-                    tincidunt in enim eu luctus.
-
-                    <br><br><br>
-
-                    Integer eget massa tincidunt, vestibulum velit in, auctor neque. Cras elit purus, tincidunt vel
-                    orci eu, posuere consequat metus. Cras congue felis sed blandit elementum. Suspendisse ac nisl
-                    imperdiet ante feugiat fringilla vel ut ligula. Phasellus ac nisl elit. Phasellus a iaculis
-                    mauris. Phasellus nisi metus, elementum ut dignissim rhoncus, bibendum at eros.
-
-                    <br><br><br>
-
-                    Vestibulum vel lobortis tortor, vehicula tempus massa. Nulla blandit finibus nulla. Aliquam ut
-                    dictum erat, ut pretium nulla. Cras sit amet nulla sit amet lectus ullamcorper congue ut
-                    vestibulum metus. Curabitur ac vehicula ligula. Suspendisse vel augue eu ante fringilla aliquam.
-                    Fusce in interdum neque, eu sagittis dui. Nullam metus massa, egestas id erat eu, iaculis
-                    eleifend felis.
-
-                    <br><br><br>
-
-                    Cras dapibus purus eros, quis condimentum mauris rutrum euismod. Phasellus facilisis nunc eu
-                    tincidunt vulputate. Sed placerat congue accumsan. Maecenas porta elit dictum purus accumsan, ut
-                    vestibulum elit vestibulum. Aenean dui dolor, venenatis at commodo ac, tristique et ligula.
-                    Vestibulum lacinia quam vitae metus ornare, a venenatis elit maximus. Etiam tortor ante, feugiat
-                    eu accumsan non, consectetur at ligula. Phasellus maximus mollis neque, a sagittis nunc bibendum
-                    et.
-
-                    <br><br><br>
-
-                    Cras molestie at ligula eget molestie. Pellentesque imperdiet lorem augue, non tempus massa
-                    rhoncus vitae. Morbi ac ipsum id tellus viverra suscipit. Proin suscipit faucibus sem et
-                    efficitur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                    egestas. Aenean at sem mattis, pharetra metus semper, gravida neque. Cras mattis tempus viverra.
-                    Mauris sodales convallis risus sit amet vestibulum. Proin tincidunt, ex ut interdum efficitur,
-                    odio turpis dapibus ipsum, eget congue ipsum neque nec enim. Aliquam iaculis ac justo sit amet
-                    tempor.
-
-                    <br><br><br>
-
-                    Nullam nulla quam, sollicitudin ut ultrices non, ornare vitae augue. Etiam hendrerit elit vel
-                    libero porta scelerisque. Phasellus tellus elit, aliquet quis malesuada vel, dapibus eget augue.
-                    Quisque volutpat velit sed urna suscipit, at laoreet purus faucibus. Quisque elit risus,
-                    vehicula in nunc ullamcorper, venenatis sollicitudin felis. Pellentesque id eleifend ex.
-                    Praesent porttitor, felis eget porta ornare, enim nunc pretium tellus, sit amet consectetur
-                    neque nibh non metus. Duis eu leo a arcu laoreet pellentesque eu eu eros. Praesent lobortis
-                    tincidunt scelerisque. Nulla arcu orci, fringilla at erat posuere, gravida convallis nibh.
-
-                    <br><br><br>
-
-                    Cras risus diam, eleifend quis leo quis, venenatis laoreet leo. Praesent in purus molestie,
-                    sodales turpis in, tincidunt nisi. Suspendisse sed magna efficitur urna scelerisque varius sit
-                    amet et nisi. Nullam id molestie risus. Integer ac convallis urna. Sed ac bibendum lorem, a
-                    vehicula dui. Vivamus at dictum nunc. In cursus erat id justo lacinia blandit. Pellentesque
-                    habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris pulvinar
-                    ligula sed mattis eleifend. Nullam rhoncus justo a sapien interdum, in vulputate mi pulvinar.
-                    Donec ipsum purus, eleifend sit amet ligula ac, fermentum pretium elit. Vivamus ligula magna,
-                    lobortis nec urna vitae, viverra pharetra nisl. Curabitur posuere nibh ut ultricies scelerisque.
-
-                    <br><br><br>
-
-                    In at nulla ultrices, blandit tortor sit amet, ultricies neque. Suspendisse faucibus leo vitae
-                    lectus egestas varius. Integer malesuada id nisi sit amet pellentesque. Pellentesque in
-                    ultricies lorem. Curabitur nisl leo, sodales sit amet consequat ac, facilisis a eros. Quisque
-                    euismod vulputate ipsum, sed commodo lectus sollicitudin interdum. Vivamus id venenatis diam,
-                    vitae commodo diam. Curabitur porta maximus nunc sit amet consectetur. Nullam eget nisl libero.
-                    Ut nunc diam, suscipit nec porttitor id, dignissim non arcu. Aenean efficitur eu arcu efficitur
-                    gravida. Cras auctor ligula nec leo maximus fringilla. Vivamus egestas augue varius, posuere
-                    felis sit amet, placerat sapien. Praesent arcu ligula, suscipit at velit in, convallis pulvinar
-                    mi.
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet quam eleifend, tempus sem
-                    ullamcorper, fermentum elit. Quisque massa urna, tristique eu aliquet id, facilisis ac libero.
-                    Nam nec gravida ligula. Nunc euismod sapien non elit rhoncus dignissim. Nunc ac elit posuere,
-                    interdum odio ut, egestas risus. Fusce est dui, facilisis ut consectetur porttitor, imperdiet in
-                    massa. Duis egestas, tortor in aliquet scelerisque, lorem nunc ultrices nisi, vitae ullamcorper
-                    quam odio sit amet ante. Nulla tincidunt volutpat consectetur. Ut rutrum massa a lacus tincidunt
-                    fermentum.
-
-                    <br><br><br>
-
-                    Nam nisi urna, pellentesque vitae neque nec, suscipit viverra ante. Nam et urna euismod ligula
-                    consectetur luctus ac et tellus. Curabitur vel elit vitae arcu tempus auctor. Sed sed semper
-                    mauris. Aliquam id dolor consequat, pharetra erat a, ultricies arcu. Mauris sit amet congue dui.
-                    Sed ipsum ante, lobortis et felis a, porta tristique neque. Fusce iaculis accumsan odio, at
-                    imperdiet nisl feugiat facilisis. Nullam placerat nec tellus vel gravida. Aenean id faucibus
-                    odio.
-
-                    <br><br><br>
-
-                    Nulla efficitur libero sem, et cursus augue iaculis a. Duis aliquet gravida dictum. Nunc metus
-                    neque, scelerisque non rhoncus viverra, viverra sed eros. Sed volutpat tellus id risus viverra
-                    consequat. Suspendisse et tempor neque, ac sollicitudin lectus. Pellentesque efficitur
-                    ullamcorper nibh. Phasellus ut leo lobortis, condimentum lacus id, dignissim dui. Donec
-                    tincidunt in enim eu luctus.
-
-                    <br><br><br>
-
-                    Integer eget massa tincidunt, vestibulum velit in, auctor neque. Cras elit purus, tincidunt vel
-                    orci eu, posuere consequat metus. Cras congue felis sed blandit elementum. Suspendisse ac nisl
-                    imperdiet ante feugiat fringilla vel ut ligula. Phasellus ac nisl elit. Phasellus a iaculis
-                    mauris. Phasellus nisi metus, elementum ut dignissim rhoncus, bibendum at eros.
-
-                    <br><br><br>
-
-                    Vestibulum vel lobortis tortor, vehicula tempus massa. Nulla blandit finibus nulla. Aliquam ut
-                    dictum erat, ut pretium nulla. Cras sit amet nulla sit amet lectus ullamcorper congue ut
-                    vestibulum metus. Curabitur ac vehicula ligula. Suspendisse vel augue eu ante fringilla aliquam.
-                    Fusce in interdum neque, eu sagittis dui. Nullam metus massa, egestas id erat eu, iaculis
-                    eleifend felis.
-
-                    <br><br><br>
-
-                    Cras dapibus purus eros, quis condimentum mauris rutrum euismod. Phasellus facilisis nunc eu
-                    tincidunt vulputate. Sed placerat congue accumsan. Maecenas porta elit dictum purus accumsan, ut
-                    vestibulum elit vestibulum. Aenean dui dolor, venenatis at commodo ac, tristique et ligula.
-                    Vestibulum lacinia quam vitae metus ornare, a venenatis elit maximus. Etiam tortor ante, feugiat
-                    eu accumsan non, consectetur at ligula. Phasellus maximus mollis neque, a sagittis nunc bibendum
-                    et.
-
-                    <br><br><br>
-
-                    Cras molestie at ligula eget molestie. Pellentesque imperdiet lorem augue, non tempus massa
-                    rhoncus vitae. Morbi ac ipsum id tellus viverra suscipit. Proin suscipit faucibus sem et
-                    efficitur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                    egestas. Aenean at sem mattis, pharetra metus semper, gravida neque. Cras mattis tempus viverra.
-                    Mauris sodales convallis risus sit amet vestibulum. Proin tincidunt, ex ut interdum efficitur,
-                    odio turpis dapibus ipsum, eget congue ipsum neque nec enim. Aliquam iaculis ac justo sit amet
-                    tempor.
-
-                    <br><br><br>
-
-                    Nullam nulla quam, sollicitudin ut ultrices non, ornare vitae augue. Etiam hendrerit elit vel
-                    libero porta scelerisque. Phasellus tellus elit, aliquet quis malesuada vel, dapibus eget augue.
-                    Quisque volutpat velit sed urna suscipit, at laoreet purus faucibus. Quisque elit risus,
-                    vehicula in nunc ullamcorper, venenatis sollicitudin felis. Pellentesque id eleifend ex.
-                    Praesent porttitor, felis eget porta ornare, enim nunc pretium tellus, sit amet consectetur
-                    neque nibh non metus. Duis eu leo a arcu laoreet pellentesque eu eu eros. Praesent lobortis
-                    tincidunt scelerisque. Nulla arcu orci, fringilla at erat posuere, gravida convallis nibh.
-
-                    <br><br><br>
-
-                    Cras risus diam, eleifend quis leo quis, venenatis laoreet leo. Praesent in purus molestie,
-                    sodales turpis in, tincidunt nisi. Suspendisse sed magna efficitur urna scelerisque varius sit
-                    amet et nisi. Nullam id molestie risus. Integer ac convallis urna. Sed ac bibendum lorem, a
-                    vehicula dui. Vivamus at dictum nunc. In cursus erat id justo lacinia blandit. Pellentesque
-                    habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris pulvinar
-                    ligula sed mattis eleifend. Nullam rhoncus justo a sapien interdum, in vulputate mi pulvinar.
-                    Donec ipsum purus, eleifend sit amet ligula ac, fermentum pretium elit. Vivamus ligula magna,
-                    lobortis nec urna vitae, viverra pharetra nisl. Curabitur posuere nibh ut ultricies scelerisque.
-
-                    <br><br><br>
-
-                    In at nulla ultrices, blandit tortor sit amet, ultricies neque. Suspendisse faucibus leo vitae
-                    lectus egestas varius. Integer malesuada id nisi sit amet pellentesque. Pellentesque in
-                    ultricies lorem. Curabitur nisl leo, sodales sit amet consequat ac, facilisis a eros. Quisque
-                    euismod vulputate ipsum, sed commodo lectus sollicitudin interdum. Vivamus id venenatis diam,
-                    vitae commodo diam. Curabitur porta maximus nunc sit amet consectetur. Nullam eget nisl libero.
-                    Ut nunc diam, suscipit nec porttitor id, dignissim non arcu. Aenean efficitur eu arcu efficitur
-                    gravida. Cras auctor ligula nec leo maximus fringilla. Vivamus egestas augue varius, posuere
-                    felis sit amet, placerat sapien. Praesent arcu ligula, suscipit at velit in, convallis pulvinar
-                    mi.
+                                Roiland voices the eponymous characters, with Chris Parnell, Spencer Grammer and Sarah
+                                Chalke voicing the rest of Rick and Morty's family. The series originated from an
+                                animated short parody film of Back to the Future, created by Roiland for Channel 101, a
+                                short film festival co-founded by Harmon. The series has been acclaimed by critics for
+                                its originality, creativity and humor. </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div v-else-if="mainsec === 'tv' && subsec === 'so'" id="so" key="so">
-            <div id="so-image-container" class="bg-image-container">
-                <div class="image-cropper left">
-                    <img id="so-image-left" class="bg-image" src="SO_edit.jpg">
-                </div>
-                <div class="image-cropper right">
-                    <img id="so-image-right" class="bg-image" src="SO_edit.jpg">
-                </div>
-            </div>
-            <div id="so-overlay" class="bg-image-overlay">
+        <div v-else-if="mainsec === 'tv' && subsec === 'so'" id="so" class="content-container" key="so">
+            <div id="so-content" class="content">
                 <div class="spacer2"></div>
                 <div id="so-main" class="main">
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet quam eleifend, tempus sem
-                    ullamcorper, fermentum elit. Quisque massa urna, tristique eu aliquet id, facilisis ac libero.
-                    Nam nec gravida ligula. Nunc euismod sapien non elit rhoncus dignissim. Nunc ac elit posuere,
-                    interdum odio ut, egestas risus. Fusce est dui, facilisis ut consectetur porttitor, imperdiet in
-                    massa. Duis egestas, tortor in aliquet scelerisque, lorem nunc ultrices nisi, vitae ullamcorper
-                    quam odio sit amet ante. Nulla tincidunt volutpat consectetur. Ut rutrum massa a lacus tincidunt
-                    fermentum.
-
-                    <br><br><br>
-
-                    Nam nisi urna, pellentesque vitae neque nec, suscipit viverra ante. Nam et urna euismod ligula
-                    consectetur luctus ac et tellus. Curabitur vel elit vitae arcu tempus auctor. Sed sed semper
-                    mauris. Aliquam id dolor consequat, pharetra erat a, ultricies arcu. Mauris sit amet congue dui.
-                    Sed ipsum ante, lobortis et felis a, porta tristique neque. Fusce iaculis accumsan odio, at
-                    imperdiet nisl feugiat facilisis. Nullam placerat nec tellus vel gravida. Aenean id faucibus
-                    odio.
-
-                    <br><br><br>
-
-                    Nulla efficitur libero sem, et cursus augue iaculis a. Duis aliquet gravida dictum. Nunc metus
-                    neque, scelerisque non rhoncus viverra, viverra sed eros. Sed volutpat tellus id risus viverra
-                    consequat. Suspendisse et tempor neque, ac sollicitudin lectus. Pellentesque efficitur
-                    ullamcorper nibh. Phasellus ut leo lobortis, condimentum lacus id, dignissim dui. Donec
-                    tincidunt in enim eu luctus.
-
-                    <br><br><br>
-
-                    Integer eget massa tincidunt, vestibulum velit in, auctor neque. Cras elit purus, tincidunt vel
-                    orci eu, posuere consequat metus. Cras congue felis sed blandit elementum. Suspendisse ac nisl
-                    imperdiet ante feugiat fringilla vel ut ligula. Phasellus ac nisl elit. Phasellus a iaculis
-                    mauris. Phasellus nisi metus, elementum ut dignissim rhoncus, bibendum at eros.
-
-                    <br><br><br>
-
-                    Vestibulum vel lobortis tortor, vehicula tempus massa. Nulla blandit finibus nulla. Aliquam ut
-                    dictum erat, ut pretium nulla. Cras sit amet nulla sit amet lectus ullamcorper congue ut
-                    vestibulum metus. Curabitur ac vehicula ligula. Suspendisse vel augue eu ante fringilla aliquam.
-                    Fusce in interdum neque, eu sagittis dui. Nullam metus massa, egestas id erat eu, iaculis
-                    eleifend felis.
-
-                    <br><br><br>
-
-                    Cras dapibus purus eros, quis condimentum mauris rutrum euismod. Phasellus facilisis nunc eu
-                    tincidunt vulputate. Sed placerat congue accumsan. Maecenas porta elit dictum purus accumsan, ut
-                    vestibulum elit vestibulum. Aenean dui dolor, venenatis at commodo ac, tristique et ligula.
-                    Vestibulum lacinia quam vitae metus ornare, a venenatis elit maximus. Etiam tortor ante, feugiat
-                    eu accumsan non, consectetur at ligula. Phasellus maximus mollis neque, a sagittis nunc bibendum
-                    et.
-
-                    <br><br><br>
-
-                    Cras molestie at ligula eget molestie. Pellentesque imperdiet lorem augue, non tempus massa
-                    rhoncus vitae. Morbi ac ipsum id tellus viverra suscipit. Proin suscipit faucibus sem et
-                    efficitur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                    egestas. Aenean at sem mattis, pharetra metus semper, gravida neque. Cras mattis tempus viverra.
-                    Mauris sodales convallis risus sit amet vestibulum. Proin tincidunt, ex ut interdum efficitur,
-                    odio turpis dapibus ipsum, eget congue ipsum neque nec enim. Aliquam iaculis ac justo sit amet
-                    tempor.
-
-                    <br><br><br>
-
-                    Nullam nulla quam, sollicitudin ut ultrices non, ornare vitae augue. Etiam hendrerit elit vel
-                    libero porta scelerisque. Phasellus tellus elit, aliquet quis malesuada vel, dapibus eget augue.
-                    Quisque volutpat velit sed urna suscipit, at laoreet purus faucibus. Quisque elit risus,
-                    vehicula in nunc ullamcorper, venenatis sollicitudin felis. Pellentesque id eleifend ex.
-                    Praesent porttitor, felis eget porta ornare, enim nunc pretium tellus, sit amet consectetur
-                    neque nibh non metus. Duis eu leo a arcu laoreet pellentesque eu eu eros. Praesent lobortis
-                    tincidunt scelerisque. Nulla arcu orci, fringilla at erat posuere, gravida convallis nibh.
-
-                    <br><br><br>
-
-                    Cras risus diam, eleifend quis leo quis, venenatis laoreet leo. Praesent in purus molestie,
-                    sodales turpis in, tincidunt nisi. Suspendisse sed magna efficitur urna scelerisque varius sit
-                    amet et nisi. Nullam id molestie risus. Integer ac convallis urna. Sed ac bibendum lorem, a
-                    vehicula dui. Vivamus at dictum nunc. In cursus erat id justo lacinia blandit. Pellentesque
-                    habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris pulvinar
-                    ligula sed mattis eleifend. Nullam rhoncus justo a sapien interdum, in vulputate mi pulvinar.
-                    Donec ipsum purus, eleifend sit amet ligula ac, fermentum pretium elit. Vivamus ligula magna,
-                    lobortis nec urna vitae, viverra pharetra nisl. Curabitur posuere nibh ut ultricies scelerisque.
-
-                    <br><br><br>
-
-                    In at nulla ultrices, blandit tortor sit amet, ultricies neque. Suspendisse faucibus leo vitae
-                    lectus egestas varius. Integer malesuada id nisi sit amet pellentesque. Pellentesque in
-                    ultricies lorem. Curabitur nisl leo, sodales sit amet consequat ac, facilisis a eros. Quisque
-                    euismod vulputate ipsum, sed commodo lectus sollicitudin interdum. Vivamus id venenatis diam,
-                    vitae commodo diam. Curabitur porta maximus nunc sit amet consectetur. Nullam eget nisl libero.
-                    Ut nunc diam, suscipit nec porttitor id, dignissim non arcu. Aenean efficitur eu arcu efficitur
-                    gravida. Cras auctor ligula nec leo maximus fringilla. Vivamus egestas augue varius, posuere
-                    felis sit amet, placerat sapien. Praesent arcu ligula, suscipit at velit in, convallis pulvinar
-                    mi.
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet quam eleifend, tempus sem
-                    ullamcorper, fermentum elit. Quisque massa urna, tristique eu aliquet id, facilisis ac libero.
-                    Nam nec gravida ligula. Nunc euismod sapien non elit rhoncus dignissim. Nunc ac elit posuere,
-                    interdum odio ut, egestas risus. Fusce est dui, facilisis ut consectetur porttitor, imperdiet in
-                    massa. Duis egestas, tortor in aliquet scelerisque, lorem nunc ultrices nisi, vitae ullamcorper
-                    quam odio sit amet ante. Nulla tincidunt volutpat consectetur. Ut rutrum massa a lacus tincidunt
-                    fermentum.
-
-                    <br><br><br>
-
-                    Nam nisi urna, pellentesque vitae neque nec, suscipit viverra ante. Nam et urna euismod ligula
-                    consectetur luctus ac et tellus. Curabitur vel elit vitae arcu tempus auctor. Sed sed semper
-                    mauris. Aliquam id dolor consequat, pharetra erat a, ultricies arcu. Mauris sit amet congue dui.
-                    Sed ipsum ante, lobortis et felis a, porta tristique neque. Fusce iaculis accumsan odio, at
-                    imperdiet nisl feugiat facilisis. Nullam placerat nec tellus vel gravida. Aenean id faucibus
-                    odio.
-
-                    <br><br><br>
-
-                    Nulla efficitur libero sem, et cursus augue iaculis a. Duis aliquet gravida dictum. Nunc metus
-                    neque, scelerisque non rhoncus viverra, viverra sed eros. Sed volutpat tellus id risus viverra
-                    consequat. Suspendisse et tempor neque, ac sollicitudin lectus. Pellentesque efficitur
-                    ullamcorper nibh. Phasellus ut leo lobortis, condimentum lacus id, dignissim dui. Donec
-                    tincidunt in enim eu luctus.
-
-                    <br><br><br>
-
-                    Integer eget massa tincidunt, vestibulum velit in, auctor neque. Cras elit purus, tincidunt vel
-                    orci eu, posuere consequat metus. Cras congue felis sed blandit elementum. Suspendisse ac nisl
-                    imperdiet ante feugiat fringilla vel ut ligula. Phasellus ac nisl elit. Phasellus a iaculis
-                    mauris. Phasellus nisi metus, elementum ut dignissim rhoncus, bibendum at eros.
-
-                    <br><br><br>
-
-                    Vestibulum vel lobortis tortor, vehicula tempus massa. Nulla blandit finibus nulla. Aliquam ut
-                    dictum erat, ut pretium nulla. Cras sit amet nulla sit amet lectus ullamcorper congue ut
-                    vestibulum metus. Curabitur ac vehicula ligula. Suspendisse vel augue eu ante fringilla aliquam.
-                    Fusce in interdum neque, eu sagittis dui. Nullam metus massa, egestas id erat eu, iaculis
-                    eleifend felis.
-
-                    <br><br><br>
-
-                    Cras dapibus purus eros, quis condimentum mauris rutrum euismod. Phasellus facilisis nunc eu
-                    tincidunt vulputate. Sed placerat congue accumsan. Maecenas porta elit dictum purus accumsan, ut
-                    vestibulum elit vestibulum. Aenean dui dolor, venenatis at commodo ac, tristique et ligula.
-                    Vestibulum lacinia quam vitae metus ornare, a venenatis elit maximus. Etiam tortor ante, feugiat
-                    eu accumsan non, consectetur at ligula. Phasellus maximus mollis neque, a sagittis nunc bibendum
-                    et.
-
-                    <br><br><br>
-
-                    Cras molestie at ligula eget molestie. Pellentesque imperdiet lorem augue, non tempus massa
-                    rhoncus vitae. Morbi ac ipsum id tellus viverra suscipit. Proin suscipit faucibus sem et
-                    efficitur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                    egestas. Aenean at sem mattis, pharetra metus semper, gravida neque. Cras mattis tempus viverra.
-                    Mauris sodales convallis risus sit amet vestibulum. Proin tincidunt, ex ut interdum efficitur,
-                    odio turpis dapibus ipsum, eget congue ipsum neque nec enim. Aliquam iaculis ac justo sit amet
-                    tempor.
-
-                    <br><br><br>
-
-                    Nullam nulla quam, sollicitudin ut ultrices non, ornare vitae augue. Etiam hendrerit elit vel
-                    libero porta scelerisque. Phasellus tellus elit, aliquet quis malesuada vel, dapibus eget augue.
-                    Quisque volutpat velit sed urna suscipit, at laoreet purus faucibus. Quisque elit risus,
-                    vehicula in nunc ullamcorper, venenatis sollicitudin felis. Pellentesque id eleifend ex.
-                    Praesent porttitor, felis eget porta ornare, enim nunc pretium tellus, sit amet consectetur
-                    neque nibh non metus. Duis eu leo a arcu laoreet pellentesque eu eu eros. Praesent lobortis
-                    tincidunt scelerisque. Nulla arcu orci, fringilla at erat posuere, gravida convallis nibh.
-
-                    <br><br><br>
-
-                    Cras risus diam, eleifend quis leo quis, venenatis laoreet leo. Praesent in purus molestie,
-                    sodales turpis in, tincidunt nisi. Suspendisse sed magna efficitur urna scelerisque varius sit
-                    amet et nisi. Nullam id molestie risus. Integer ac convallis urna. Sed ac bibendum lorem, a
-                    vehicula dui. Vivamus at dictum nunc. In cursus erat id justo lacinia blandit. Pellentesque
-                    habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris pulvinar
-                    ligula sed mattis eleifend. Nullam rhoncus justo a sapien interdum, in vulputate mi pulvinar.
-                    Donec ipsum purus, eleifend sit amet ligula ac, fermentum pretium elit. Vivamus ligula magna,
-                    lobortis nec urna vitae, viverra pharetra nisl. Curabitur posuere nibh ut ultricies scelerisque.
-
-                    <br><br><br>
-
-                    In at nulla ultrices, blandit tortor sit amet, ultricies neque. Suspendisse faucibus leo vitae
-                    lectus egestas varius. Integer malesuada id nisi sit amet pellentesque. Pellentesque in
-                    ultricies lorem. Curabitur nisl leo, sodales sit amet consequat ac, facilisis a eros. Quisque
-                    euismod vulputate ipsum, sed commodo lectus sollicitudin interdum. Vivamus id venenatis diam,
-                    vitae commodo diam. Curabitur porta maximus nunc sit amet consectetur. Nullam eget nisl libero.
-                    Ut nunc diam, suscipit nec porttitor id, dignissim non arcu. Aenean efficitur eu arcu efficitur
-                    gravida. Cras auctor ligula nec leo maximus fringilla. Vivamus egestas augue varius, posuere
-                    felis sit amet, placerat sapien. Praesent arcu ligula, suscipit at velit in, convallis pulvinar
-                    mi.
+                    <div class="title-container">
+                        <img src="so_title.png">
+                    </div>
+                    <div class="main-row">
+                        <div class="video-container">
+                            <iframe src="https://youtu.be/UN7OH4d3CEw">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="main-row">
+                        <div class="text-container">
+                            <p>Solar Opposites is an American adult animated sitcom created by Rick and Morty co-creator
+                                Justin Roiland and Mike McMahan for Hulu. Originally created for the Fox Broadcasting
+                                Company, the project was shelved, then bought by Hulu. The series debuted on May 8,
+                                2020. The series was originally ordered as 2 seasons consisting of 8 episodes each.
+                                In June 2020, the series was renewed for a third season consisting of 12 episodes.
+                                The second season was released on March 26, 2021. In June 2021, the series was renewed
+                                for a fourth season also consisting of 12 episodes.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div v-else-if="mainsec === 'videogames'" id="videogames" key="videogames">
+        <div v-else-if="mainsec === 'videogames' && subsec === 'vr'" id="vr" class="content-container" key="vr">
+            <div id="vr-content" class="content">
+                <div class="spacer2"></div>
+                <div id="vr-main" class="main">
+                    <div class="title-container">
+                        <img src="vr_title.png">
+                    </div>
+                    <div class="main-row">
+                        <div class="video-container">
+                            <iframe src="https://youtu.be/VPpZl8BYp_M">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="main-row">
+                        <div class="text-container">
+                            <p>Rick and Morty: Virtual Rick-ality is a virtual reality game compatible with HTC Vive,
+                                PlayStation VR and Oculus Rift developed by Owlchemy Labs and published by Adult Swim
+                                Games for Microsoft Windows on April 20, 2017. It is based on the American animated
+                                series Rick and Morty, whose series co-creator Justin Roiland aided in the development.
+                                A port for the PlayStation 4 was released on April 10, 2018</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </transition>
+        <div v-else-if="mainsec === 'videogames' && subsec === 'tstu'" id="tstu" class="content-container" key="tstu">
+            <div id="tstu-content" class="content">
+                <div class="spacer2"></div>
+                <div id="tstu-main" class="main">
+                    <div class="title-container">
+                        <img src="tstu_title.webp">
+                    </div>
+                    <div class="main-row">
+                        <div class="video-container">
+                            <iframe src="https://youtu.be/wJHNdcDip7s">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="main-row">
+                        <div class="text-container">
+                            <p>Trover Saves the Universe is a 2019 action platform game developed by Squanch Games and
+                                published by Gearbox Publishing for Microsoft Windows, PlayStation 4, Nintendo Switch,
+                                Xbox One and Oculus Quest. Envisioned as a comedy game, the title features an optional
+                                virtual reality component. Justin Roiland, who was the founder of Squanch Games and the
+                                co-creator of Rick and Morty, provided voice work for many characters in this game. It
+                                received generally positive reviews upon release. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition-group>
     <div id="banner-bg"></div>
     <div id="banner">
         <div id="logo-container">
