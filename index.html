@@ -9,11 +9,11 @@
     <link href="JR_style.css" rel="stylesheet">
     <!--Required JS resources-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <!--Favicon-->
 </head>
 <body>
 <div id="app">
     <transition-group name="fade">
+        <!--Divs for Background Images-->
         <div v-if="mainsec === 'about'" id="about-image-container" class="bg-image-container" key="about-bg">
             <div class="image-cropper left">
                 <img id="about-image-left" class="bg-image" src="JR_RandM_style_edit.jpg">
@@ -64,6 +64,7 @@
             </div>
             <div class="bg-image-overlay"></div>
         </div>
+        <!--Divs for Page Content for Each Section-->
         <div v-if="mainsec === 'about'" id="about" class="content-container" key="about">
             <div id="about-content" class="content">
                 <div class="spacer2"></div>
@@ -238,7 +239,9 @@
             </div>
         </div>
     </transition-group>
+    <!--Black Gradient Background For Nav Bar-->
     <div id="banner-bg"></div>
+    <!--Nav Bar-->
     <div id="banner">
         <div id="logo-container">
             <img id="logo" src="JR_logo_4.png">
@@ -291,5 +294,6 @@
     </div>
 </div>
 </body>
+<!--Navigation Functionality Script-->
 <script src="JR_script.js"></script>
 </html>
